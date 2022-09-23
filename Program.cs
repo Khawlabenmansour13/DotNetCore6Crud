@@ -1,5 +1,6 @@
 using DotNetCore6Crud.Models;
 using Microsoft.EntityFrameworkCore;
+//using NToastNotify;
 var builder = WebApplication.CreateBuilder(args);
 
 string connectionString = builder.Configuration.
@@ -8,7 +9,7 @@ GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(options=>
                  options.UseSqlServer(
                  connectionString));
-
+//builder.Services.AddNTaostNotifyToastr();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
